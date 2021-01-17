@@ -1,0 +1,5 @@
+<mat-selection-list (selectionChange)="onIsCompletedChanged($event)" >
+  <mat-list-option *ngFor="let todo of todos" [selected]="todo.isCompleted" [value]="todo.id" [class.completed-todo]="todo.isCompleted" checkboxPosition="before">
+    {{ todo.text }}
+  </mat-list-option>
+</mat-selection-list>

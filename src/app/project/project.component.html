@@ -1,0 +1,8 @@
+<mat-card class="project-card">
+  <mat-card-header>
+    <mat-card-title>{{ project.title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-todos-list [todos]="project.todos"></app-todos-list>
+  </mat-card-content>
+</mat-card>

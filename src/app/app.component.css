@@ -1,0 +1,24 @@
+.projects {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.projects .project {
+  margin-right: 6px;
+  margin-top: 20px;
+  min-width: 33%;
+  flex-grow: 1;
+}
+
+.mat-toolbar-row {
+  justify-content: center;
+}
+
+.mat-toolbar-row .add-todo {
+  position: absolute;
+  padding-right: 20px;
+  right: 0;
+}
