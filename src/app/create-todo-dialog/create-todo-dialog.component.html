@@ -1,40 +1,42 @@
-<div mat-dialog-title>Новая задача</div>
-<div mat-dialog-content>
-  <form [formGroup]="form">
-    <div>
-      <mat-form-field>
-        <input matInput formControlName="text" />
-        <mat-error *ngIf="form.get('text')?.hasError('required')">
-          Введите название задачи
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div>
-      <mat-form-field>
-        <mat-select #projectSelect formControlName="projectId">
-          <mat-option *ngFor="let project of projects" [value]="project.id">
-            {{ project.title }}
-          </mat-option>
-          <mat-option [value]="-1">
-            Новая категория
-          </mat-option>
-        </mat-select>
-        <mat-error *ngIf="form.get('projectId')?.hasError('required')">
-          Выберите проект из списка
-        </mat-error>
-      </mat-form-field>
-    </div>
-    <div *ngIf="projectSelect.selected && projectSelect.value === -1">
-      <mat-form-field>
-        <input matInput formControlName="projectTitle" />
-        <mat-error *ngIf="form.get('projectTitle')?.hasError('required')">
-          Введите название нового проекта
-        </mat-error>
-      </mat-form-field>
-    </div>
-  </form>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Отмена</button>
-  <button mat-button (click)="onSubmit()">Ок</button>
+<div class="dialog">
+  <div mat-dialog-title>Новая задача</div>
+  <div mat-dialog-content>
+    <form [formGroup]="form">
+      <div>
+        <mat-form-field>
+          <input matInput formControlName="text" />
+          <mat-error *ngIf="form.get('text')?.hasError('required')">
+            Введите название задачи
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <mat-select #projectSelect formControlName="projectId">
+            <mat-option *ngFor="let project of projects" [value]="project.id">
+              {{ project.title }}
+            </mat-option>
+            <mat-option [value]="-1">
+              Новая категория
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.get('projectId')?.hasError('required')">
+            Выберите проект из списка
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div *ngIf="projectSelect.selected && projectSelect.value === -1">
+        <mat-form-field>
+          <input matInput formControlName="projectTitle" />
+          <mat-error *ngIf="form.get('projectTitle')?.hasError('required')">
+            Введите название нового проекта
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-raised-button (click)="onCancel()">Отмена</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Ок</button>
+  </div>
 </div>
