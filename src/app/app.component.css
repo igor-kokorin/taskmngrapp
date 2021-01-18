@@ -10,7 +10,11 @@
   margin-right: 6px;
   margin-top: 20px;
   min-width: 33%;
-  flex-grow: 1;
+}
+
+.projects::after {
+  content: "";
+  min-width: 33%;
 }
 
 .mat-toolbar-row {

@@ -13,6 +13,8 @@ export class ProjectsService {
   constructor (private http: HttpClient) {}
 
   public getProjects (): Observable<Project[]> {
-    return this.http.get<Project[]>(`${environment.apiEndpoint}/projects`).pipe(map(data => plainToClass(Project, data)))
+    return this.http.get<Project[]>(`${environment.apiEndpoint}/projects`).pipe(
+      map(data => plainToClass(Project, data))
+    )
   }
 }

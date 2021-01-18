@@ -8,7 +8,6 @@ import { Input } from '@angular/core';
   styleUrls: [ './project.component.css' ]
 })
 export class ProjectComponent implements OnInit {
-
   @Input() project: Project;
 
   constructor() { }
