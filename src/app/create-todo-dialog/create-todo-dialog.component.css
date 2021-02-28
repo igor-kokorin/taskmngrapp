@@ -1,9 +1,5 @@
-.dialog {
-  min-width: 450px;
-}
-
 .dialog .mat-form-field {
-  min-width: 100%;
+  width: 100%;
 }
 
 .dialog button {
